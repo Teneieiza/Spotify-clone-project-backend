@@ -1,0 +1,15 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Exam {
+  id: Float!
+  firstname: String!
+  lastname: String!
+  age: Float!
+}
+
+type Query {
+  examAll: [Exam!]!
+  examOne(id: Int!): Exam
+}
