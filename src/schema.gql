@@ -15,10 +15,12 @@ type Query {
 }
 
 type Mutation {
-  createExam(createExamInput: CreateExamInput!): Exam!
+  createExam(createExamInput: ExamInput!): Exam!
+  editExam(id: Int!, editexam: ExamInput!): Exam
+  deleteExam(id: Int!): Exam
 }
 
-input CreateExamInput {
+input ExamInput {
   firstname: String!
   lastname: String!
   age: Int!
