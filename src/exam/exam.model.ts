@@ -16,7 +16,7 @@ export class Exam {
 }
 
 @InputType()
-export class CreateExamInput {
+export class ExamInput {
   @Field()
   firstname: string;
 
