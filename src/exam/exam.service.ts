@@ -11,7 +11,7 @@ export class ExamService {
     },
     {
       id: 2,
-      firstname: 'Eart',
+      firstname: 'Earth',
       lastname: 'eieiza',
       age: 2,
     },
@@ -23,5 +23,18 @@ export class ExamService {
 
   findOne(id: number) {
     return this.examData.find((data) => data.id === id);
+  }
+
+  create(createExamInput: {
+    firstname: string;
+    lastname: string;
+    age: number;
+  }) {
+    const newPerson = {
+      id: this.examData.length + 1,
+      ...createExamInput,
+    };
+    this.examData.push(newPerson);
+    return newPerson;
   }
 }
