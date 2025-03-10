@@ -13,3 +13,13 @@ type Query {
   examAll: [Exam!]!
   examOne(id: Int!): Exam
 }
+
+type Mutation {
+  createExam(createExamInput: CreateExamInput!): Exam!
+}
+
+input CreateExamInput {
+  firstname: String!
+  lastname: String!
+  age: Int!
+}

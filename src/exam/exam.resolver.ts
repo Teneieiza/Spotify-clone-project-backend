@@ -1,6 +1,6 @@
-import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { ExamService } from './exam.service';
-import { Exam } from './exam.model';
+import { Exam, CreateExamInput } from './exam.model';
 
 @Resolver(() => Exam)
 export class ExamResolver {
@@ -14,5 +14,10 @@ export class ExamResolver {
   @Query(() => Exam, { nullable: true })
   examOne(@Args('id', { type: () => Int }) id: number) {
     return this.examService.findOne(id);
+  }
+
+  @Mutation(() => Exam)
+  createExam(@Args('createExamInput') createExamInput: CreateExamInput) {
+    return this.examService.create(createExamInput);
   }
 }
